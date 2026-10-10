@@ -22,11 +22,11 @@ message NewUser {
     string password = 3;
 }
 
-service Login {
+service LoginService {
     rpc IsValidUser (Credentials) returns (User);
 }
 
-service SignUp {
+service SignUpService {
     rpc CreateUser (NewUser) returns (User);
 }
 
