@@ -23,10 +23,10 @@ message NewUser {
 }
 
 service Login {
-    rpc IsValidUser (Credentials) returns (User)
+    rpc IsValidUser (Credentials) returns (User);
 }
 
 service SignUp {
-    rpc CreateUser (NewUser) returns (User)
+    rpc CreateUser (NewUser) returns (User);
 }
 
