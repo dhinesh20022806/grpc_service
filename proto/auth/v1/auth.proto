@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "/proto/gen;genpb";
+
+
+message Credentials {
+    string email = 1;
+    string password = 2;
+}
+
+message User {
+    string email = 1;
+    string name = 2;
+    string jwt = 3;
+    bool valid = 4;
+}
+
+message NewUser {
+    string email = 1;
+    string name = 2;
+    string password = 3;
+}
+
+service Login {
+    rpc IsValidUser (Credentials) returns (User)
+}
+
+service SignUp {
+    rpc CreateUser (NewUser) returns (User)
+}
+
