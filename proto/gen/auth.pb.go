@@ -269,6 +269,118 @@ func (x *CreateUserResponse) GetValid() bool {
 	return false
 }
 
+type IsValidJWTRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Jwt           string                 `protobuf:"bytes,1,opt,name=jwt,proto3" json:"jwt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IsValidJWTRequest) Reset() {
+	*x = IsValidJWTRequest{}
+	mi := &file_auth_auth_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IsValidJWTRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IsValidJWTRequest) ProtoMessage() {}
+
+func (x *IsValidJWTRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_auth_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IsValidJWTRequest.ProtoReflect.Descriptor instead.
+func (*IsValidJWTRequest) Descriptor() ([]byte, []int) {
+	return file_auth_auth_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *IsValidJWTRequest) GetJwt() string {
+	if x != nil {
+		return x.Jwt
+	}
+	return ""
+}
+
+type IsValidJWTResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Valid         bool                   `protobuf:"varint,4,opt,name=valid,proto3" json:"valid,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IsValidJWTResponse) Reset() {
+	*x = IsValidJWTResponse{}
+	mi := &file_auth_auth_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IsValidJWTResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IsValidJWTResponse) ProtoMessage() {}
+
+func (x *IsValidJWTResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_auth_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IsValidJWTResponse.ProtoReflect.Descriptor instead.
+func (*IsValidJWTResponse) Descriptor() ([]byte, []int) {
+	return file_auth_auth_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *IsValidJWTResponse) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IsValidJWTResponse) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *IsValidJWTResponse) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *IsValidJWTResponse) GetValid() bool {
+	if x != nil {
+		return x.Valid
+	}
+	return false
+}
+
 var File_auth_auth_proto protoreflect.FileDescriptor
 
 const file_auth_auth_proto_rawDesc = "" +
@@ -290,11 +402,20 @@ const file_auth_auth_proto_rawDesc = "" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n" +
 	"\x03jwt\x18\x03 \x01(\tR\x03jwt\x12\x14\n" +
-	"\x05valid\x18\x04 \x01(\bR\x05valid2\x92\x01\n" +
+	"\x05valid\x18\x04 \x01(\bR\x05valid\"%\n" +
+	"\x11IsValidJWTRequest\x12\x10\n" +
+	"\x03jwt\x18\x01 \x01(\tR\x03jwt\"d\n" +
+	"\x12IsValidJWTResponse\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x14\n" +
+	"\x05valid\x18\x04 \x01(\bR\x05valid2\xd3\x01\n" +
 	"\vAuthService\x12B\n" +
 	"\vIsValidUser\x12\x18.auth.IsValidUserRequest\x1a\x19.auth.IsValidUserResponse\x12?\n" +
 	"\n" +
-	"CreateUser\x12\x17.auth.CreateUserRequest\x1a\x18.auth.CreateUserResponseB<Z:github.com/dhinesh20022806/iam_service/app/proto/gen;genpbb\x06proto3"
+	"CreateUser\x12\x17.auth.CreateUserRequest\x1a\x18.auth.CreateUserResponse\x12?\n" +
+	"\n" +
+	"IsValidJWT\x12\x17.auth.IsValidJWTRequest\x1a\x18.auth.IsValidJWTResponseB9Z7github.com/dhinesh20022806/grpc_service/proto/gen;genpbb\x06proto3"
 
 var (
 	file_auth_auth_proto_rawDescOnce sync.Once
@@ -308,20 +429,24 @@ func file_auth_auth_proto_rawDescGZIP() []byte {
 	return file_auth_auth_proto_rawDescData
 }
 
-var file_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_auth_auth_proto_goTypes = []any{
 	(*IsValidUserRequest)(nil),  // 0: auth.IsValidUserRequest
 	(*IsValidUserResponse)(nil), // 1: auth.IsValidUserResponse
 	(*CreateUserRequest)(nil),   // 2: auth.CreateUserRequest
 	(*CreateUserResponse)(nil),  // 3: auth.CreateUserResponse
+	(*IsValidJWTRequest)(nil),   // 4: auth.IsValidJWTRequest
+	(*IsValidJWTResponse)(nil),  // 5: auth.IsValidJWTResponse
 }
 var file_auth_auth_proto_depIdxs = []int32{
 	0, // 0: auth.AuthService.IsValidUser:input_type -> auth.IsValidUserRequest
 	2, // 1: auth.AuthService.CreateUser:input_type -> auth.CreateUserRequest
-	1, // 2: auth.AuthService.IsValidUser:output_type -> auth.IsValidUserResponse
-	3, // 3: auth.AuthService.CreateUser:output_type -> auth.CreateUserResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: auth.AuthService.IsValidJWT:input_type -> auth.IsValidJWTRequest
+	1, // 3: auth.AuthService.IsValidUser:output_type -> auth.IsValidUserResponse
+	3, // 4: auth.AuthService.CreateUser:output_type -> auth.CreateUserResponse
+	5, // 5: auth.AuthService.IsValidJWT:output_type -> auth.IsValidJWTResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -338,7 +463,7 @@ func file_auth_auth_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_auth_proto_rawDesc), len(file_auth_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
