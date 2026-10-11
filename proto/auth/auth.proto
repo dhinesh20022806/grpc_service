@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package auth.v1;
+package auth;
+
+option go_package = "github.com/dhinesh20022806/iam_service/app/proto/gen;genpb";
 
 message IsValidUserRequest {
     string email = 1;
@@ -27,10 +29,7 @@ message CreateUserResponse {
     bool valid = 4;
 }
 
-service LoginService {
+service AuthService {
     rpc IsValidUser(IsValidUserRequest) returns (IsValidUserResponse);
-}
-
-service SignUpService {
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
 }
