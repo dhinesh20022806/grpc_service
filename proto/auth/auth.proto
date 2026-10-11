@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "github.com/dhinesh20022806/iam_service/app/proto/gen;genpb";
+option go_package = "github.com/dhinesh20022806/grpc_service/proto/gen;genpb";
 
 message IsValidUserRequest {
     string email = 1;
