@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package object;
+
+option go_package = "github.com/dhinesh20022806/grpc_service/proto/gen;genpb";
+
+message PutObjectRequest {
+    bytes data = 1;
+}
+
+message PutObjectResponse {
+    string object_id = 1;
+}
+
+message GetObjectRequest {
+    string object_id = 1;
+}
+
+message GetObjectResponse {
+    bytes data = 1;
+}
+
+message StoreObjectRequest {
+    string object_id = 1;
+    bytes data = 2;
+}
+
+message StoreObjectResponse {
+    string object_id = 1;
+}
+
+
+service ObjectService {
+    rpc PutObject(PutObjectRequest) returns (PutObjectResponse);
+    rpc GetObject(GetObjectRequest) returns (GetObjectResponse);
+    rpc StoreObject(StoreObjectRequest) returns (StoreObjectResponse);
+}
+
+
+
+
+
